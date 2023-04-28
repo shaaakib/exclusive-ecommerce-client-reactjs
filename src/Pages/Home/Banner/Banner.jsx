@@ -4,7 +4,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 
 export default function Banner() {
   return (
-    <div className="carousel w-full ">
+    <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full ">
         <img
           src="https://images.pexels.com/photos/7742544/pexels-photo-7742544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
