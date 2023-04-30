@@ -12,7 +12,7 @@ export default function Main() {
         <div>
           <LeftNav />
         </div>
-        <div>
+        <div className="min-h[calc(100vh-137px)]">
           <Outlet />
         </div>
       </div>

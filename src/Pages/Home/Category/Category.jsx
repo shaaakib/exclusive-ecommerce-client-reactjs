@@ -2,11 +2,16 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import ProductCard from '../ProductCard/ProductCard';
+import { addToDb } from '../../../utils/fakeDB';
 
 export default function Category() {
-  const { id } = useParams();
+  // const { id } = useParams();
   const categoryProduct = useLoaderData();
-  console.log(categoryProduct);
+
+  const handleAddToCart = (id) => {
+    addToDb(id);
+  };
+
   return (
     <div className="">
       <div className='className="text-center text-3xl font-bold  mb-5'>
@@ -23,7 +28,11 @@ export default function Category() {
       </div>
       <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-5 px-4">
         {categoryProduct.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            handleAddToCart={handleAddToCart}
+          />
         ))}
       </div>
     </div>

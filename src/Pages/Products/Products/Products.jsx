@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaRegHeart, FaRegStar, FaStar } from 'react-icons/fa';
+import { FaRegHeart, FaRegStar, FaStar, FaTruck, FaUndo } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { useLoaderData } from 'react-router-dom';
 
@@ -8,16 +8,8 @@ const Product3 = () => {
   const [show2, setShow2] = useState(false);
 
   const product = useLoaderData();
-  const {
-    id,
-    images,
-    description,
-    title,
-    new_price,
-    old_price,
-    reviews,
-    discount,
-  } = product;
+  console.log(product);
+  const { id, images, description, title, new_price, reviews } = product;
 
   return (
     <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
@@ -138,7 +130,10 @@ const Product3 = () => {
               onClick={() => setShow(!show)}
               className="flex justify-between items-center cursor-pointer"
             >
-              <p className="text-base leading-4 text-gray-800">Free Delivery</p>
+              <p className="text-base flex gap-3 leading-4 text-gray-800">
+                <FaTruck className="text-3xl" />
+                <span className="text-2xl font-semibold"> Free Delivery</span>
+              </p>
               <button
                 className="
 									cursor-pointer
@@ -172,8 +167,9 @@ const Product3 = () => {
               }
               id="sect"
             >
-              You will be responsible for paying for your own shipping costs for
-              returning your item. Shipping costs are nonrefundable
+              <span className="underline font-serif">
+                Enter your postal code for Delivery Availability
+              </span>
             </div>
           </div>
         </div>
@@ -183,8 +179,9 @@ const Product3 = () => {
               onClick={() => setShow2(!show2)}
               className="flex justify-between items-center cursor-pointer"
             >
-              <p className="text-base leading-4 text-gray-800">
-                Return Delivery
+              <p className="text-base flex  gap-3 leading-4 text-gray-800">
+                <FaUndo className="text-3xl" />{' '}
+                <span className="text-2xl font-semibold">Return Delivery</span>
               </p>
               <button
                 className="
@@ -214,13 +211,13 @@ const Product3 = () => {
             </div>
             <div
               className={
-                'pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 ' +
+                'pt-4 text-base leading-normal pr-12 mt-4 text-gray-600  ' +
                 (show2 ? 'block' : 'hidden')
               }
               id="sect"
             >
-              If you have any questions on how to return your item to us,
-              contact us.
+              <span className="font-serif">Free 30 Days Delivery Returns.</span>{' '}
+              <span className="underline font-serif">Details</span>
             </div>
           </div>
         </div>

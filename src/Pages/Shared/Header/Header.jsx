@@ -152,8 +152,12 @@ export default function Header() {
               ></input>
               <FaSearch className="relative bottom-7 ms-32 md:ms-36" />
             </div>
-            <FaRegHeart className="mt-4 ms-3 w-6" />
-            <FaShoppingCart className="mt-4 ms-3 w-6" />
+            <Link to="/wishlist">
+              <FaRegHeart className="mt-4 ms-3 w-6" />
+            </Link>
+            <Link to="/cart">
+              <FaShoppingCart className="mt-4 ms-3 w-6" />
+            </Link>
 
             <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
